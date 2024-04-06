@@ -1,29 +1,30 @@
-# EEGPT: A Unified, Scalable Framework for EEG Signal Modeling
+# NeuroGPT
+### Neuro-GPT: Towards a Foundation Model for EEG  [link to paper](https://arxiv.org/abs/2311.03764)
 
-POYO (Azabou et al 2023, NeurIPS) introduces a new transformer-based framework for neural population decoding, designed to adapt rapidly to new, unseen sessions with minimal labels, leveraging large-scale neural recordings. Read here for a [high-level intro to POYO](https://poyo-brain.github.io/).
+#### Published on IEEE - ISBI 2024
 
-This repository contains code from the POYO paper, which is a part of the [Neuro-Galaxy](https://github.com/neuro-galaxy) project.
-
-## Installation Instructions
-
-In a clean virtual environment, follow these steps:
-
+We propose Neuro-GPT, a foundation model consisting of an EEG encoder and a GPT model. The foundation model is pre-trained on a large-scale data set using a self-supervised task that learns how to reconstruct masked EEG segments. We then fine-tune the model on a Motor Imagery Classification task to validate its performance in a low-data regime (9 subjects). Our experiments demonstrate that applying a foundation model can significantly improve classification performance compared to a model trained from scratch.
+<!-- 
+<picture>
+<source> -->
+![Neuro-GPT Pipeline](./figures/pipeline.png)
+<!-- </picture> -->
+## Installation
+```console
+git clone git@github.com:wenhui0206/NeuroGPT.git
+pip install -r requirements.txt
+cd NeuroGPT/scripts
+./train.sh
 ```
-git clone https://github.com/neuro-galaxy/poyo.git
-cd poyo
-pip install -e .
-```
 
-## Link to Papers
+## Requirements
+pip install -r requirements.txt
 
-For an in-depth understanding of our framework, refer to our paper. Please cite as:
+## Datasets
+- [TUH EEG Corpus](https://isip.piconepress.com/projects/tuh_eeg/html/downloads.shtml#c_tueg)
+- [BCI Competition IV 2a Dataset](https://www.bbci.de/competition/iv/#datasets)
 
-```bibtex
-@inproceedings{
-    azabou2023unified,
-    title={A Unified, Scalable Framework for Neural Population Decoding},
-    author={Mehdi Azabou and Vinam Arora and Venkataramana Ganesh and Ximeng Mao and Santosh Nachimuthu and Michael Mendelson and Blake Richards and Matthew Perich and Guillaume Lajoie and Eva L. Dyer},
-    booktitle={Thirty-seventh Conference on Neural Information Processing Systems},
-    year={2023},
-}
-```
+## Acknowledgments
+This project is developed based on the following open-source repositories:
+- [Self-supervised learning of brain dynamics from broad neuroimaging data](https://github.com/athms/learning-from-brains)
+- [EEG-Conformer](https://github.com/eeyhsong/EEG-Conformer)
