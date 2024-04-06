@@ -1,4 +1,4 @@
-# POYO: A Unified, Scalable Framework for Neural Population Decoding
+# EEGPT: A Unified, Scalable Framework for EEG Signal Modeling
 
 POYO (Azabou et al 2023, NeurIPS) introduces a new transformer-based framework for neural population decoding, designed to adapt rapidly to new, unseen sessions with minimal labels, leveraging large-scale neural recordings. Read here for a [high-level intro to POYO](https://poyo-brain.github.io/).
 
